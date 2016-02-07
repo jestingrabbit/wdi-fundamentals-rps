@@ -48,25 +48,26 @@ function getWinner(playerMove,computerMove) {
                 if(computerMove === 'scissors'){
                     winner = 'player';
                 } else if(computerMove === 'paper'){
-                    winner = 'computer'
+                    winner = 'computer';
                 }
             break;
             case 'paper':
                 if(computerMove === 'rock'){
                     winner = 'player';
                 } else if(computerMove === 'scissors'){
-                    winner = 'computer'
+                    winner = 'computer';
                 }
             break;
             case 'scissors':
                 if(computerMove === 'paper'){
                     winner = 'player';
                 } else if(computerMove === 'rock'){
-                    winner = 'computer'
+                    winner = 'computer';
                 }
             break;
             default:
-                console.log("values inputted are bad")
+                console.log("input values are bad");
+                winner = undefined;
         }
     }
 
@@ -82,10 +83,12 @@ function playToFive() {
     var computerMove;
     var winner;
     
-    while(playerWins < 5 && computerWins<5){
+    while((playerWins < 5) && (computerWins<5){
+        
         playerMove = getPlayerMove(null);
         computerMove = getComputerMove(null);
         consol.log("You played", playerMove, "and I chose" computerMove);
+        
         winner = getWinner(playerMove, computerMove);
         if(winner === 'player'){
             playerWins++;
@@ -101,11 +104,45 @@ function playToFive() {
     if (playerMove === 5){
         console.log("You won! gg.");
     } else {
-        console.log("A machine has defeated a human, as will happen nearly half the time.");
+        console.log("A machine has defeated a human, as will happen nearly half the time in this instance.");
     }
     
-    // Write code that plays 'Rock, Paper, Scissors' until either the player or the computer has won five times.
-    /* YOUR CODE HERE */
+    return [playerWins, computerWins];
+}
+
+function playTo(x) {
+    console.log("Let's play Rock, Paper, Scissors");
+    var playerWins = 0;
+    var computerWins = 0;
+    
+    var playerMove;
+    var computerMove;
+    var winner;
+    
+    while((playerWins < x) && (computerWins < x){
+        
+        playerMove = getPlayerMove(null);
+        computerMove = getComputerMove(null);
+        consol.log("You played", playerMove, "and I chose" computerMove);
+        
+        winner = getWinner(playerMove, computerMove);
+        if(winner === 'player'){
+            playerWins++;
+            console.log("You won! The score is", playerWins, "to", computerWins);
+        } else if(winner === 'computer' ){
+            computerWins++;
+            console.log("I got you that time! The score is", playerWins, "to", computerWins);
+        } else {
+            console.log("That was a tie... The tension builds! The score is still", playerWins, "to", computerWins);
+        }
+    }
+    
+    if (playerMove >= x){
+        console.log("You won! gg.");
+    } else {
+        console.log("A machine has defeated a human, as will happen nearly half the time in this instance.");
+    }
+    
     return [playerWins, computerWins];
 }
 
