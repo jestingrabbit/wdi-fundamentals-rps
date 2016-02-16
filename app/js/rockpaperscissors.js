@@ -39,7 +39,7 @@ function getComputerMove(move) {
 
 function getWinner(playerMove,computerMove) {
     var winner;
-    
+
     if( playerMove === computerMove ){
         winner = 'tie'
     } else {
@@ -78,17 +78,17 @@ function playToFive() {
     console.log("Let's play Rock, Paper, Scissors");
     var playerWins = 0;
     var computerWins = 0;
-    
+
     var playerMove;
     var computerMove;
     var winner;
-    
-    while((playerWins < 5) && (computerWins<5){
-        
+
+    while((playerWins < 5) && (computerWins<5)){
+
         playerMove = getPlayerMove(null);
         computerMove = getComputerMove(null);
-        consol.log("You played", playerMove, "and I chose" computerMove);
-        
+        consol.log("You played", playerMove, "and I chose", computerMove);
+
         winner = getWinner(playerMove, computerMove);
         if(winner === 'player'){
             playerWins++;
@@ -100,13 +100,13 @@ function playToFive() {
             console.log("That was a tie... The tension builds! The score is still", playerWins, "to", computerWins);
         }
     }
-    
+
     if (playerMove === 5){
         console.log("You won! gg.");
     } else {
         console.log("A machine has defeated a human, as will happen nearly half the time in this instance.");
     }
-    
+
     return [playerWins, computerWins];
 }
 
@@ -114,17 +114,17 @@ function playTo(x) {
     console.log("Let's play Rock, Paper, Scissors");
     var playerWins = 0;
     var computerWins = 0;
-    
+
     var playerMove;
     var computerMove;
     var winner;
-    
-    while((playerWins < x) && (computerWins < x){
-        
+
+    while((playerWins < x) && (computerWins < x)){
+
         playerMove = getPlayerMove(null);
         computerMove = getComputerMove(null);
-        consol.log("You played", playerMove, "and I chose" computerMove);
-        
+        consol.log("You played", playerMove, "and I chose", computerMove);
+
         winner = getWinner(playerMove, computerMove);
         if(winner === 'player'){
             playerWins++;
@@ -136,13 +136,12 @@ function playTo(x) {
             console.log("That was a tie... The tension builds! The score is still", playerWins, "to", computerWins);
         }
     }
-    
+
     if (playerMove >= x){
         console.log("You won! gg.");
     } else {
         console.log("A machine has defeated a human, as will happen nearly half the time in this instance.");
     }
-    
+
     return [playerWins, computerWins];
 }
-
