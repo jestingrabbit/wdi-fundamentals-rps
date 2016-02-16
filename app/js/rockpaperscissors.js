@@ -87,7 +87,7 @@ function playToFive() {
 
         playerMove = getPlayerMove(null);
         computerMove = getComputerMove(null);
-        consol.log("You played", playerMove, "and I chose", computerMove);
+        console.log("You played", playerMove, "and I chose", computerMove);
 
         winner = getWinner(playerMove, computerMove);
         if(winner === 'player'){
@@ -101,7 +101,7 @@ function playToFive() {
         }
     }
 
-    if (playerMove === 5){
+    if (playerWins === 5){
         console.log("You won! gg.");
     } else {
         console.log("A machine has defeated a human, as will happen nearly half the time in this instance.");
@@ -123,7 +123,7 @@ function playTo(x) {
 
         playerMove = getPlayerMove(null);
         computerMove = getComputerMove(null);
-        consol.log("You played", playerMove, "and I chose", computerMove);
+        console.log("You played", playerMove, "and I chose", computerMove);
 
         winner = getWinner(playerMove, computerMove);
         if(winner === 'player'){
@@ -137,7 +137,7 @@ function playTo(x) {
         }
     }
 
-    if (playerMove >= x){
+    if (playerWins >= x){
         console.log("You won! gg.");
     } else {
         console.log("A machine has defeated a human, as will happen nearly half the time in this instance.");
@@ -145,3 +145,5 @@ function playTo(x) {
 
     return [playerWins, computerWins];
 }
+
+playToFive();
